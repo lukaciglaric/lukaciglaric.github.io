@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<title>Podatki</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.card {
+  background: white;
+  padding: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  font-size: 32px;
+}
+</style>
+</head>
+<body>
+  <div class="card">
+    Ime in priimek: <b id="ime"></b>
+  </div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+document.getElementById("ime").textContent =
+  params.get("ime") || "Neznano";
+</script>
+</body>
+</html>
